@@ -121,3 +121,58 @@ button:hover{
     margin-top:20px;
     color:#ff4081;
 }
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff4081;
+    font-weight: bold;
+}
+
+.balloon {
+    width: 80px;
+    height: 100px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: -120px;
+    animation: floatUp 10s infinite;
+}
+
+.red {
+    background: red;
+    left: 10%;
+}
+
+.blue {
+    background: cyan;
+    left: 70%;
+}
+
+.green {
+    background: lime;
+    left: 90%;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120vh);
+    }
+}
