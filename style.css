@@ -1,178 +1,177 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+body {
+    margin: 0;
+    height: 100vh;
 
-body{
-    background:#0f172a;
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial,sans-serif;
-    position:relative;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-/* Stars */
+    background-color: #071330;
 
-.stars{
-    position:absolute;
-    width:100%;
-    height:100%;
     background-image:
-    radial-gradient(white 1px, transparent 1px);
-    background-size:50px 50px;
-    opacity:0.3;
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
 }
 
 /* Card */
 
-.card{
-    background:white;
-    width:450px;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0px 0px 30px rgba(255,255,255,0.2);
-    z-index:10;
+.card {
+
+    background: white;
+
+    width: 500px;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 0 30px #ffffff80;
+
+    z-index: 10;
 }
 
-.card h1{
-    color:#ff4081;
-    margin-bottom:15px;
+h1 {
+
+    color: hotpink;
 
     text-shadow:
-    0 0 10px #ff4081,
-    0 0 20px #ff4081,
-    0 0 40px #ff4081;
+        0 0 10px hotpink,
+        0 0 20px pink;
 }
 
-.card h2{
-    margin-bottom:15px;
+input {
+
+    padding: 10px;
+
+    width: 70%;
+
+    margin-top: 10px;
 }
 
-.card p{
-    margin-bottom:20px;
+button {
+
+    background: hotpink;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    font-size: 18px;
 }
 
-button{
-    padding:12px 25px;
-    border:none;
-    border-radius:10px;
-    background:#ff4081;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
+button:hover {
+
+    transform: scale(1.05);
 }
 
-button:hover{
-    transform:scale(1.1);
+#message {
+
+    font-size: 28px;
+
+    color: hotpink;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+#countdown {
+
+    color: #333;
+
+    margin-top: 20px;
 }
 
 /* Balloons */
 
-.balloon{
-    position:absolute;
-    width:70px;
-    height:90px;
-    border-radius:50%;
-    bottom:-150px;
-    animation:float 10s infinite linear;
-}
-
-.b1{
-    left:10%;
-    background:red;
-}
-
-.b2{
-    left:30%;
-    background:yellow;
-    animation-delay:2s;
-}
-
-.b3{
-    left:70%;
-    background:cyan;
-    animation-delay:4s;
-}
-
-.b4{
-    left:90%;
-    background:lime;
-    animation-delay:6s;
-}
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0);
-    }
-
-    100%{
-        transform:translateY(-120vh);
-    }
-}
-
-#message{
-    margin-top:20px;
-    color:#ff4081;
-}
-
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -10px;
-    animation: fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh) rotate(720deg);
-    }
-}
-
-#message {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #ff4081;
-    font-weight: bold;
-}
-
 .balloon {
-    width: 80px;
-    height: 100px;
+
+    width: 90px;
+
+    height: 110px;
+
     border-radius: 50%;
-    position: fixed;
-    bottom: -120px;
-    animation: floatUp 10s infinite;
+
+    position: absolute;
+
+    animation: float 8s infinite alternate;
 }
 
 .red {
+
     background: red;
+
     left: 10%;
 }
 
+.yellow {
+
+    background: yellow;
+
+    left: 30%;
+}
+
 .blue {
+
     background: cyan;
+
     left: 70%;
 }
 
 .green {
+
     background: lime;
+
     left: 90%;
 }
 
-@keyframes floatUp {
+@keyframes float {
+
     from {
-        transform: translateY(0);
+        transform: translateY(0px);
     }
 
     to {
-        transform: translateY(-120vh);
+        transform: translateY(-40px);
+    }
+}
+
+/* Confetti */
+
+.confetti {
+
+    position: fixed;
+
+    width: 10px;
+
+    height: 10px;
+
+    top: -10px;
+
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(100vh)
+            rotate(720deg);
     }
 }
